@@ -1,5 +1,5 @@
 <?php
-
+namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\Matchs;
 
@@ -7,7 +7,7 @@ class MatchsSeeder extends Seeder
 {
     public function run()
     {
-        $matches = [
+        $matchs = [
             ['id' => '1', 'mdate' => '2024-03-22', 'startsat' => '15:00:00', 'ticketprice' => '500.00', 'mtype' => 'championship'],
             ['id' => '2', 'mdate' => '2019-04-20', 'startsat' => '15:30:00', 'ticketprice' => '1000.00', 'mtype' => 'cup'],
             ['id' => '3', 'mdate' => '2000-05-11', 'startsat' => '10:00:00', 'ticketprice' => '1000.00', 'mtype' => 'championship'],
@@ -30,8 +30,8 @@ class MatchsSeeder extends Seeder
             ['id' => '20', 'mdate' => '2010-01-01', 'startsat' => '11:11:11', 'ticketprice' => '1111.00', 'mtype' => 'cup'],
         ];
 
-        foreach ($matches as $spectator) {
-            Matchs::create($spectator);
+        foreach ($matchs as $match) {
+            Matchs::create($match);
         }
     }
 }

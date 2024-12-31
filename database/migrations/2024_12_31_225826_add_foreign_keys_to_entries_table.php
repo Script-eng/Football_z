@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('matchs', function (Blueprint $table) {
-            $table->id();
-            $table->date('mdate');
-            $table->time('startsat');
-            $table->decimal('ticketprice', 8, 2);
-            $table->string('mtype');
-            $table->timestamps();
+        Schema::table('entries', function (Blueprint $table) {
+            $table->foreign('spectatorid')->references('id')->on('spectators')->onDelete('cascade');
+            $table->foreign('matchid')->references('id')->on('matchs')->onDelete('cascade');
         });
     }
 
@@ -26,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('matchs');
+        Schema::table('entries', function (Blueprint $table) {
+            //
+        });
     }
 };

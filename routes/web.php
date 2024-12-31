@@ -9,9 +9,11 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/matches', [MatchController::class, 'index'])->name('matches.index');
+Route::get('/entries', [EntryController::class, 'index'])->name('entries.index');
+Route::get('/spectators', [SpectatorController::class, 'index'])->name('spectators.index');
 
 
-Route::get('/entries', [EntryController::class, 'index']);
 
 // Authenticated Routes
 Route::middleware('auth')->group(function () {
