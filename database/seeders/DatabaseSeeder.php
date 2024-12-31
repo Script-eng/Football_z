@@ -26,33 +26,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
-        Schema::create('entries', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('spectatorid');
-            $table->unsignedBigInteger('matchid');
-            $table->timestamp('timestamp');
-            $table->foreign('spectatorid')->references('id')->on('spectators')->onDelete('cascade');
-            $table->foreign('matchid')->references('id')->on('matches')->onDelete('cascade');
-            $table->timestamps();
-        });
-
-        Schema::create('matches', function (Blueprint $table) {
-            $table->id();
-            $table->date('mdate');
-            $table->time('startsat');
-            $table->decimal('ticketprice', 8, 2);
-            $table->string('mtype');
-            $table->timestamps();
-        });
-
-        Schema::create('spectators', function (Blueprint $table) {
-            $table->id();
-            $table->string('sname');
-            $table->boolean('male');
-            $table->boolean('haspass');
-            $table->timestamps();
-        });
-        
         
         
     }
