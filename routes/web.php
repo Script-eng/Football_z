@@ -3,13 +3,15 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EntryController;
+use App\Http\Controllers\MatchsController;
+use App\Http\Controllers\SpectatorController;
 
 // Public Routes
 Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/matches', [MatchController::class, 'index'])->name('matches.index');
+Route::get('/matches', [MatchsController::class, 'index'])->name('matches.index');
 Route::get('/entries', [EntryController::class, 'index'])->name('entries.index');
 Route::get('/spectators', [SpectatorController::class, 'index'])->name('spectators.index');
 
