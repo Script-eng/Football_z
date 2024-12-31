@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Models\Matchs;
 
-class MatchSeeder extends Seeder
+class MatchsSeeder extends Seeder
 {
     public function run()
     {
