@@ -15,9 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('spectatorid');
             $table->unsignedBigInteger('matchid');
-            $table->timestamp('timestamp');
-            $table->foreign('spectatorid')->references('id')->on('spectators')->onDelete('cascade');
-            $table->foreign('matchid')->references('id')->on('matches')->onDelete('cascade');
+            $table->time('timestamp');
             $table->timestamps();
         });
     }

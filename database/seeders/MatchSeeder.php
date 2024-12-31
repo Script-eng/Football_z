@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\Spectator;
+use App\Models\Matchs;
 
 class MatchSeeder extends Seeder
 {
