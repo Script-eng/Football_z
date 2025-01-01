@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EntryController;
@@ -11,11 +12,10 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/matches', [MatchsController::class, 'index'])->name('matches.index');
+Route::resource('matches', MatchsController::class)->middleware('auth');
+
 Route::get('/entries', [EntryController::class, 'index'])->name('entries.index');
 Route::get('/spectators', [SpectatorController::class, 'index'])->name('spectators.index');
-
-
 
 // Authenticated Routes
 Route::middleware('auth')->group(function () {
@@ -38,9 +38,4 @@ Route::middleware('auth')->group(function () {
 
     // Profile Management Routes
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-// Authentication Routes
-require __DIR__.'/auth.php';
