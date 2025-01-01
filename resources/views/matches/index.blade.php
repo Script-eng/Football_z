@@ -16,7 +16,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($matchs as $match)
+            @foreach($matches as $match)
                 <tr>
                     <td>{{ $match->mdate }}</td>
                     <td>{{ $match->startsat }}</td>

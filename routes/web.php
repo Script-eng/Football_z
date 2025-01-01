@@ -39,3 +39,5 @@ Route::middleware('auth')->group(function () {
     // Profile Management Routes
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
 });
+
+require __DIR__.'/auth.php';

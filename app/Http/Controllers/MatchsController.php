@@ -27,7 +27,7 @@ class MatchsController extends Controller
         $match->startsat = $request->startsat;
         $match->ticketprice = $request->ticketprice;
         $match->mtype = $request->mtype;
-        $match->user_id = Auth::id();
+        // $match->user_id = Auth::id();
         $match->save();
 
         return redirect()->route('matches.index')->with('success', 'Match created successfully!');
@@ -43,10 +43,7 @@ class MatchsController extends Controller
     {
         $match = Matchs::findOrFail($id);
 
-        // Ensure user can edit only their own matches or admin can edit any
-        if ($match->user_id != Auth::id() && !Auth::user()->is_admin) {
-            return redirect()->route('matches.index')->with('error', 'You are not authorized to edit this match.');
-        }
+        
 
         return view('matches.edit', compact('match'));
     }
@@ -55,10 +52,7 @@ class MatchsController extends Controller
     {
         $match = Matchs::findOrFail($id);
 
-        // Ensure user can update only their own matches or admin can update any
-        if ($match->user_id != Auth::id() && !Auth::user()->is_admin) {
-            return redirect()->route('matches.index')->with('error', 'You are not authorized to update this match.');
-        }
+        
 
         $match->mdate = $request->mdate;
         $match->startsat = $request->startsat;
@@ -73,10 +67,10 @@ class MatchsController extends Controller
     {
         $match = Matchs::findOrFail($id);
 
-        // Ensure user can delete only their own matches or admin can delete any
-        if ($match->user_id != Auth::id() && !Auth::user()->is_admin) {
-            return redirect()->route('matches.index')->with('error', 'You are not authorized to delete this match.');
-        }
+        // // Ensure user can delete only their own matches or admin can delete any
+        // if ($match->user_id != Auth::id() && !Auth::user()->is_admin) {
+        //     return redirect()->route('matches.index')->with('error', 'You are not authorized to delete this match.');
+        // }
 
         $match->delete();
 
