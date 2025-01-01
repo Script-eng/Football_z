@@ -14,9 +14,10 @@ Route::get('/', function () {
 
 Route::resource('matches', MatchsController::class)->middleware('auth');
 Route::resource('entries', EntryController::class)->middleware('auth');
+Route::resource('spectators', SpectatorController::class)->middleware('auth');
 
 // Route::get('/entries', [EntryController::class, 'index'])->name('entries.index');
-Route::get('/spectators', [SpectatorController::class, 'index'])->name('spectators.index');
+//Route::get('/spectators', [SpectatorController::class, 'index'])->name('spectators.index');
 
 // Authenticated Routes
 Route::middleware('auth')->group(function () {
