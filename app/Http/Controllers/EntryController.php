@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Entry;
+use App\Models\Matchs;
+use App\Models\Spectator;
 
 class EntryController extends Controller
 {
@@ -16,7 +18,9 @@ class EntryController extends Controller
 
     public function create()
     {
-        return view('entries.create');
+        $matches = Matchs::all();
+        $spectators = Spectator::all();
+        return view('entries.create', compact('matches', 'spectators'));
     }
 
     public function store(Request $request)
@@ -33,7 +37,9 @@ class EntryController extends Controller
     public function edit($id)
     {
         $entry = Entry::findOrFail($id);
-        return view('entries.edit', compact('entry'));
+        $matches = Matchs::all();
+        $spectators = Spectator::all();
+        return view('entries.edit', compact('entry', 'matches', 'spectators'));
     }
 
     public function update(Request $request, $id)

@@ -8,13 +8,25 @@
         @method('PUT')
 
         <div class="form-group">
-            <label for="matchid">Match ID</label>
-            <input type="number" name="matchid" id="matchid" class="form-control" value="{{ $entry->matchid }}" required>
+            <label for="matchid">Match</label>
+            <select name="matchid" id="matchid" class="form-control" required>
+                @foreach($matches as $match)
+                    <option value="{{ $match->id }}" {{ $match->id == $entry->matchid ? 'selected' : '' }}>
+                        {{ $match->mdate }} - {{ $match->mtype }}
+                    </option>
+                @endforeach
+            </select>
         </div>
 
         <div class="form-group">
-            <label for="spectatorid">Spectator ID</label>
-            <input type="number" name="spectatorid" id="spectatorid" class="form-control" value="{{ $entry->spectatorid }}" required>
+            <label for="spectatorid">Spectator</label>
+            <select name="spectatorid" id="spectatorid" class="form-control" required>
+                @foreach($spectators as $spectator)
+                    <option value="{{ $spectator->id }}" {{ $spectator->id == $entry->spectatorid ? 'selected' : '' }}>
+                        {{ $spectator->sname }}
+                    </option>
+                @endforeach
+            </select>
         </div>
 
         <div class="form-group">
