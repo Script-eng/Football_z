@@ -13,5 +13,8 @@
     <div class="mt-4">
         <a href="{{ route('spectators.index') }}" class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-yellow-400">Spectators</a>
     </div>
+    <div class="mt-4">
+        <a href="{{ route('data.form') }}" class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-yellow-400">Retrieve Data</a>
+    </div>
 </div>
 @endsection
