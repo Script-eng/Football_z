@@ -19,7 +19,7 @@ Route::resource('entries', EntryController::class)->middleware('auth');
 Route::resource('spectators', SpectatorController::class)->middleware('auth');
 Route::get('/data', [DataController::class, 'index'])->name('data.index');
 Route::get('/data/form', [DataController::class, 'form'])->name('data.form');
-Route::get('/graph', [GraphController::class, 'showGraph'])->name('graph.show');
+Route::get('/graph', [GraphController::class, 'index'])->name('graph-page');
 
 // Route::get('/entries', [EntryController::class, 'index'])->name('entries.index');
 //Route::get('/spectators', [SpectatorController::class, 'index'])->name('spectators.index');
