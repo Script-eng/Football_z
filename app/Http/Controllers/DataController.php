@@ -9,6 +9,12 @@ use App\Models\Spectator;
 
 class DataController extends Controller
 {
+
+    public function index()
+    {
+        
+        return view('data.index');
+    }
     public function form(Request $request)
     {
         // Fetch data for form dropdowns
@@ -22,7 +28,7 @@ class DataController extends Controller
             ->select(
                 'entries.spectatorid',
                 'spectators.sname as spectator_name',
-                DB::raw('CASE WHEN spectators.male = 1 THEN "Male" WHEN spectators.male = 0 THEN "Female" ELSE "Other" END AS gender'),
+                DB::raw('CASE WHEN spectators.male = -1 THEN "Female" WHEN spectators.male = 0 THEN "Male" ELSE "Unknown" END AS gender'),
                 'spectators.haspass as has_pass',
                 'entries.matchid',
                 'matchs.mdate as match_date',

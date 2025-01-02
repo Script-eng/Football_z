@@ -30,14 +30,13 @@
         </div>
 
         <!-- Gender Filter -->
-        <div class="form-group mt-4">
-            <label>Gender</label>
-            <div>
-                <input type="radio" name="gender" value="1" {{ request('gender') == '1' ? 'checked' : '' }}> Male
-                <input type="radio" name="gender" value="0" {{ request('gender') == '0' ? 'checked' : '' }}> Female
-                <input type="radio" name="gender" value="-1" {{ request('gender') == '-1' ? 'checked' : '' }}> Other
-            </div>
-        </div>
+<div class="form-group mt-4">
+    <label>Gender</label>
+    <div>
+        <input type="radio" name="gender" value="0" {{ request('gender') == '0' ? 'checked' : '' }}> Male
+        <input type="radio" name="gender" value="-1" {{ request('gender') == '-1' ? 'checked' : '' }}> Female
+    </div>
+</div>
 
         <!-- Match Type Filter -->
         <div class="form-group mt-4">
@@ -78,7 +77,7 @@
                     <tr>
                         <td>{{ $result->spectatorid }}</td>
                         <td>{{ $result->spectator_name }}</td>
-                        <td>{{ $result->gender == 1 ? 'Male' : ($result->gender == 0 ? 'Female' : 'Other') }}</td>
+                        <td>{{ $result->gender  }}</td>
                         <td>{{ $result->has_pass == 1 ? 'Yes' : 'No' }}</td>
                         <td>{{ $result->matchid }}</td>
                         <td>{{ $result->match_date }}</td>
