@@ -7,5 +7,8 @@
     <div class="mt-8">
         <a href="/register" class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-yellow-400">Get Started</a>
     </div>
+    <div class="mt-4">
+        <a href="{{ route('data.index') }}" class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-yellow-400">Data</a>
+    </div>
 </div>
 @endsection
