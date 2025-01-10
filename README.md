@@ -28,3 +28,27 @@ This Laravel project is a web application for managing a pizzeria. It includes f
    - Optimized for various screen sizes.
 
 ---
+
+## Prerequisites
+
+- PHP >= 8.0
+- Composer
+- MySQL >= 5.7
+- Node.js & npm (for front-end assets)
+
+---
+
+## Installation
+
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/yourusername/pizzeria-laravel.git
+cd pizzeria-laravel
+```
+
+### Step 2: Install Dependencies
+```bash
+composer install
+npm install
+```
+
