@@ -52,3 +52,17 @@ composer install
 npm install
 ```
 
+### Step 3: Configure Environment
+- Copy the `.env.example` file and rename it to `.env`:
+  ```bash
+  cp .env.example .env
+  ```
+- Update the database configuration in the `.env` file:
+  ```env
+  DB_CONNECTION=mysql
+  DB_HOST=127.0.0.1
+  DB_PORT=3306
+  DB_DATABASE=pizzeria
+  DB_USERNAME=your_username
+  DB_PASSWORD=your_password
+  ```
