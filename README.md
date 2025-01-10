@@ -66,3 +66,88 @@ npm install
   DB_USERNAME=your_username
   DB_PASSWORD=your_password
   ```
+  
+```
+
+### Step 2: Install Dependencies
+```bash
+composer install
+npm install
+```
+
+### Step 3: Configure Environment
+- Copy the `.env.example` file and rename it to `.env`:
+  ```bash
+  cp .env.example .env
+  ```
+- Update the database configuration in the `.env` file:
+  ```env
+  DB_CONNECTION=mysql
+  DB_HOST=127.0.0.1
+  DB_PORT=3306
+  DB_DATABASE=pizzeria
+  DB_USERNAME=your_username
+  DB_PASSWORD=your_password
+  ```
+
+### Step 4: Generate Application Key
+```bash
+php artisan key:generate
+```
+
+### Step 5: Run Migrations
+```bash
+php artisan migrate
+```
+
+### Step 6: Serve the Application
+```bash
+php artisan serve
+```
+Access the application at `http://127.0.0.1:8000`.
+
+---
+
+## Usage
+
+- **Guests** can browse the pizza menu.
+- **Registered Users** can log in to place orders and view their order history.
+- **Admins** can log in to manage pizzas, categories, and orders.
+
+---
+
+## Troubleshooting
+
+### Common Errors
+
+#### `SQLSTATE[HY000] [2002] Connection refused`
+1. Ensure MySQL is running.
+2. Verify the `.env` file has the correct database credentials.
+3. Clear the Laravel configuration cache:
+   ```bash
+   php artisan config:clear
+   php artisan cache:clear
+   ```
+
+#### Migrations Fail
+1. Ensure the database exists.
+2. Verify MySQL user permissions.
+3. Rollback and re-run migrations:
+   ```bash
+   php artisan migrate:rollback
+   php artisan migrate
+   ```
+
+---
+
+## License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+## Contributing
+
+Feel free to submit issues or pull requests to contribute to this project. Contributions are welcome!
+
+
