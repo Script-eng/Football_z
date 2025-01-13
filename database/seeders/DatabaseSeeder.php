@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             SpectatorSeeder::class,
             MatchsSeeder::class,
             EntrySeeder::class,
+            UserSeeder::class,
             
             
         ]);
