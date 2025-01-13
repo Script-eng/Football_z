@@ -8,7 +8,7 @@ class SpectatorSeeder extends Seeder
     public function run()
     {
         $spectators = [
-            ['id' => 1, 'sname' => 'salah ben sarar', 'male' => 1, 'haspass' => 0],
+            ['id' => 1, 'sname' => 'Lesalon Stephen', 'male' => 1, 'haspass' => 0],
             ['id' => 2, 'sname' => 'Kertész Bence', 'male' => -1, 'haspass' => 0],
             ['id' => 3, 'sname' => 'Molnár Alex', 'male' => -1, 'haspass' => -1],
             ['id' => 4, 'sname' => 'Bóka Nátán', 'male' => -1, 'haspass' => -1],
